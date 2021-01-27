@@ -1,4 +1,4 @@
-package ai.certifai.solution.group_evaluation;
+
 
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;
@@ -9,7 +9,6 @@ import org.datavec.api.writable.Writable;
 import org.datavec.local.transforms.LocalTransformExecutor;
 import org.deeplearning4j.core.storage.StatsStorage;
 import org.deeplearning4j.datasets.datavec.RecordReaderDataSetIterator;
-import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
@@ -23,7 +22,6 @@ import org.deeplearning4j.ui.model.storage.InMemoryStatsStorage;
 import org.nd4j.common.io.ClassPathResource;
 import org.datavec.api.transform.schema.Schema;
 import org.nd4j.evaluation.classification.Evaluation;
-import org.nd4j.evaluation.regression.RegressionEvaluation;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.SplitTestAndTrain;
@@ -50,21 +48,25 @@ public class RedWine {
 
     public static void main(String[] args) throws Exception{
 
-        File file = new ClassPathResource("group_evaluation/winequality-red.csv").getFile();
+        File file = new ClassPathResource("winequality/winequality-red.csv").getFile();
         FileSplit fileSplit = new FileSplit(file);
 
         RecordReader rr = new CSVRecordReader(1, ',');
         rr.initialize(fileSplit);
-
+//=========================================================================
+        //  Step 1 : Build Schema
+//=========================================================================
         Schema ss = new Schema.Builder()
                 .addColumnsDouble("fixed acidity", "volatile acidity", "citric acid", "residual sugar"
                 , "chlorides", "free sulfur dioxide", "total sulfur dioxide", "density", "pH"
                 , "sulphates", "alcohol")
                 .addColumnCategorical("quality", Arrays.asList("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
                 .build();
-
+//=========================================================================
+        //  Step 2 : Build TransformProcess to transform the data
+//=========================================================================
         TransformProcess tp = new TransformProcess.Builder(ss)
-                .convertToInteger("quality")
+//                .convertToInteger("quality")
                 .build();
 
         List<List<Writable>> rawList = new ArrayList<>();
@@ -74,7 +76,9 @@ public class RedWine {
         }
 
         List<List<Writable>> processedData = LocalTransformExecutor.execute(rawList, tp);
-
+//========================================================================
+        //  Step 3 : Create Iterator ,splitting trainData and testData
+//========================================================================
         RecordReader cc = new CollectionRecordReader(processedData);
         DataSetIterator dataIterator = new RecordReaderDataSetIterator(cc, rawList.size(), -1, 11);
 
@@ -90,12 +94,16 @@ public class RedWine {
         System.out.println(Arrays.toString(trainData.getFeatures().shape()));
         System.out.println("Test vector : ");
         System.out.println(Arrays.toString(testData.getFeatures().shape()));
-
+//========================================================================
+        //  Step 4 : DataNormalization
+//========================================================================
         DataNormalization scaler = new NormalizerMinMaxScaler();
         scaler.fit(trainData);
         scaler.transform(trainData);
         scaler.transform(testData);
-
+//========================================================================
+        //  Step 5 : MultiNetwork Configuration
+//========================================================================
         MultiLayerConfiguration config = new NeuralNetConfiguration.Builder()
                 .weightInit(WeightInit.XAVIER)
                 .updater(new Adam(LR))
@@ -127,13 +135,17 @@ public class RedWine {
 
         MultiLayerNetwork model = new MultiLayerNetwork(config);
         model.init();
-
+//========================================================================
+        //  Step 6 : Setup UI , listeners
+//========================================================================
         StatsStorage storage = new InMemoryStatsStorage();
         UIServer server = UIServer.getInstance();
         server.attach(storage);
 
         model.setListeners(new StatsListener(storage, 10), new ScoreIterationListener(10));
-
+//========================================================================
+        //  Step 7 : Training and Evaluation
+//========================================================================
         for (int i = 0; i < EPOCH; i++){
             model.fit(trainData);
         }
