@@ -32,6 +32,8 @@ import org.nd4j.linalg.dataset.api.preprocessor.NormalizerMinMaxScaler;
 import org.nd4j.linalg.learning.config.Adam;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
+
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
