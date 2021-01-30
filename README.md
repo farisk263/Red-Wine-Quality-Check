@@ -6,7 +6,7 @@ This project are managed by a team of 5 peoples as an evaluation for Certified D
 
 - Clone a copy of the repository. 
 
-- Using an IDE and open the RedWineQuality.java
+- Using an IDE and open the RedWineQualityCheck.java
 
 
 ```
