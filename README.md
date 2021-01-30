@@ -4,9 +4,9 @@ This project are managed by a team of 5 peoples as an evaluation for Certified D
 
 ## Getting Started 
 
-Clone a copy of the repository. 
+- Clone a copy of the repository. 
 
-Using an IDE and open the RedWineQuality.java
+- Using an IDE and open the RedWineQuality.java
 
 
 ```
@@ -17,11 +17,11 @@ git clone Repo_Name
 
 ## Built on
 
-*[Maven](https://maven.apache.org/) - Dependency Management
+* [Maven](https://maven.apache.org/) - Dependency Management
 
 
 ## FAQ 
 
-If you are having problems on isntalling Maven dependencies. Try to reload it by right-clicking the POM.xml
+If you are having problems on installing Maven dependencies. Try to reload it by right-clicking the POM.xml
 
 
