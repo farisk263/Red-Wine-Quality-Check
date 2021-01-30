@@ -18,6 +18,7 @@ git clone Repo_Name
 ## Built on
 
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [DL4J](https://deeplearning4j.org/) - Deep Learning Library
 
 
 ## FAQ 
