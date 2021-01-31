@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java class/RedWineQ/QualityCheck/QualityCheck.iml" filepath="$PROJECT_DIR$/java class/RedWineQ/QualityCheck/QualityCheck.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java class/RedWineQ/RedWineQ.iml" filepath="$PROJECT_DIR$/java class/RedWineQ/RedWineQ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Red_Wine_Quality_Check.iml" filepath="$PROJECT_DIR$/.idea/Red_Wine_Quality_Check.iml" />
+    </modules>
+  </component>
+</project>
