@@ -11,7 +11,7 @@ This project are managed by a team of 5 peoples as an evaluation for Certified D
 
 ```
 
-git clone Repo_Name
+git clone https://github.com/farisk263/Red_Wine_Quality_Check.git
 
 ```
 
