@@ -6,14 +6,15 @@ This project are managed by a team of 5 peoples as an evaluation for Certified D
 
 - Clone a copy of the repository. 
 
-- Using an IDE and open the RedWineQualityCheck.java
-
-
 ```
 
 git clone https://github.com/farisk263/Red_Wine_Quality_Check.git
 
 ```
+- Using an IDE and open the RedWineQualityCheck.java
+
+
+
 
 ## Built on
 
