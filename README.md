@@ -15,7 +15,7 @@ It is better if we can in some way, use machine learning to help predict the qua
 - **Data Collection**
     - The datasets are retrieved from Kaggle (https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009).
     - It is related to red and white variants of the Portuguese "Vinho Verde" wine that is produced in Northern Portugal. Due to privacy issues,  only       physicochemical that is important in characterising a wine and sensory output classes are available.
-    - It have 11 unique labels and can be categorised into 10 classes.
+    - It have 11 unique labels and can be categorised into 11 classes.
     - The data is imbalance because there is no representation of lower and fine quality wine.
     
     
