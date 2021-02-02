@@ -64,8 +64,8 @@ It is better if we can in some way, use machine learning to help predict the qua
     
     
 ## **Conclusion**
-  - Faster processing when doing K-folding against Normal method.
-  - K-Folding improve the overall score.
+ 
+  - K-Folding improve the overall score but longer processing time.
   - The effect of lack of equal representation for all the classes cannot be improve greatly using synthetic data. 
 
     
