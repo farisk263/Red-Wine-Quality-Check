@@ -33,7 +33,7 @@ It is better if we can in some way, use machine learning to help predict the qua
 
   
 - **Architecture**
-  - We improved over **Normal Deep Neural Network** by applying **K-Folding**.  
+  - We improved over **Normal Deep Neural Network** by applying **K-Fold**.  
 
 
 
