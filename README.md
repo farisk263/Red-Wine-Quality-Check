@@ -82,7 +82,7 @@ It is better if we can in some way, use machine learning to help predict the qua
 
 ```
 
-git clone https://github.com/farisk263/Red_Wine_Quality_Check.git
+git clone https://github.com/farisk263/Red-Wine-Quality-Check.git
 
 ```
 - Using an IDE and open the RedWineQualityCheck.java
