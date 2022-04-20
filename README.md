@@ -1,5 +1,5 @@
 
-# Classification using Deep Neural Network on Red Wine Quality (Team TensirFlow)
+# Classification using Deep Neural Network on Red Wine Quality
 ## **Introduction**
 
 This project are managed by a team of 5 peoples as an evaluation for Certified Deep Learning Engineer course. Our team was tasked on using Deep Neural Network on structured data to solved it as a regression or classification problem.
@@ -23,7 +23,7 @@ It is better if we can in some way, use machine learning to help predict the qua
 - **Data Processing**
    - Using Knime to apply SMOTE onto the dataset to try make it equal representation of all the classes by having it filled up the imbalance data synthetically.
    
-   ![sMOTE](https://user-images.githubusercontent.com/76154147/106477420-1bb2f980-64e3-11eb-8d03-8a8205aef607.jpg)
+   ![SMOTE](https://user-images.githubusercontent.com/76154147/106477420-1bb2f980-64e3-11eb-8d03-8a8205aef607.jpg)
    
      - **Before SMOTE**
       ![Before Smote](https://user-images.githubusercontent.com/76154147/106477493-2e2d3300-64e3-11eb-8332-f769f17475a0.jpg)
