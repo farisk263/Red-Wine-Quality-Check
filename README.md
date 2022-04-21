@@ -2,7 +2,7 @@
 # Classification using Deep Neural Network on Red Wine Quality
 ## **Introduction**
 
-This project are managed by a team of 5 peoples as an evaluation for Certified Deep Learning Engineer course. Our team was tasked on using Deep Neural Network on structured data to solved it as a regression or classification problem.
+This project is used as an evaluation for Certified Deep Learning Engineer course. Our team was tasked on using Deep Neural Network on structured data to solved it as a regression or classification problem.
 
 ## **Problem Statement**
 The intricacies of deciding a fine wine when you are selecting a dish to pair it with or whether to judge the quality of a certain wine for the massess could be easier for the sommelier. 
@@ -14,9 +14,9 @@ It is better if we can in some way, use machine learning to help predict the qua
 
 - **Data Collection**
     - The datasets are retrieved from Kaggle (https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009).
-    - It is related to red and white variants of the Portuguese "Vinho Verde" wine that is produced in Northern Portugal. Due to privacy issues,  only       physicochemical that is important in characterising a wine and sensory output classes are available.
-    - It have 11 unique labels and can be categorised into 11 classes.
-    - The data is imbalance because there is no representation of lower and fine quality wine.
+    - It is related to red and white variants of the Portuguese "Vinho Verde" wine that is produced in Northern Portugal. Due to privacy issues, only       physicochemical that is important in characterising a wine and sensory output classes are available.
+    - It have 11 unique labels and can be categorised into 11 classes. However, the dataset only contain 6 quality classes which is rating of 3, 4, 5, 6, 7, 8.
+    - The data is imbalance because there is no representation of lower and higher quality wine.
     
     
     
