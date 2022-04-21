@@ -13,6 +13,7 @@ import org.deeplearning4j.earlystopping.scorecalc.DataSetLossCalculator;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
+import org.deeplearning4j.nn.conf.layers.DropoutLayer;
 import org.deeplearning4j.nn.conf.layers.OutputLayer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.nn.weights.WeightInit;
@@ -47,7 +48,7 @@ public class RedWineKFold {
 
     private static final int SEED = 567;
     private static final int INPUT = 11;
-    private static final int OUTPUT = 11;
+    private static final int OUTPUT = 6;
     private static final int EPOCH = 500;
     private static final double LR = 0.001;
 
@@ -70,7 +71,7 @@ public class RedWineKFold {
                 .addColumnsDouble("fixed acidity", "volatile acidity", "citric acid", "residual sugar"
                 , "chlorides", "free sulfur dioxide", "total sulfur dioxide", "density", "pH"
                 , "sulphates", "alcohol")
-                .addColumnCategorical("quality", Arrays.asList("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
+                .addColumnCategorical("quality", Arrays.asList("3", "4", "5", "6", "7", "8"))
                 .build();
 
 //=========================================================================
@@ -78,7 +79,8 @@ public class RedWineKFold {
 //=========================================================================
 
         TransformProcess tp = new TransformProcess.Builder(ss)
-                .convertToInteger("quality")
+//                .convertToInteger("quality")
+                .categoricalToInteger("quality")
                 .build();
 
         List<List<Writable>> rawList = new ArrayList<>();
@@ -114,6 +116,7 @@ public class RedWineKFold {
                         .nIn(INPUT)
                         .nOut(256)
                         .build())
+                .layer(new DropoutLayer(0.2))
                 .layer(new DenseLayer.Builder()
                         .nOut(256)
                         .build())

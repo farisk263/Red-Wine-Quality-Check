@@ -40,7 +40,7 @@ import java.util.List;
 public class RedWineQualityCheck {
     private static final int SEED = 567;
     private static final int INPUT = 11;
-    private static final int OUTPUT = 11;
+    private static final int OUTPUT = 6;
     private static final int EPOCH = 500;
     private static final double LR = 1e-4;
     private static final double SR = 0.8;
@@ -59,13 +59,14 @@ public class RedWineQualityCheck {
                 .addColumnsDouble("fixed acidity", "volatile acidity", "citric acid", "residual sugar"
                         , "chlorides", "free sulfur dioxide", "total sulfur dioxide", "density", "pH"
                         , "sulphates", "alcohol")
-                .addColumnCategorical("quality", Arrays.asList("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
+                .addColumnCategorical("quality", Arrays.asList("3", "4", "5", "6", "7", "8"))
                 .build();
 //=========================================================================
         //  Step 2 : Build TransformProcess to transform the data
 //=========================================================================
         TransformProcess tp = new TransformProcess.Builder(ss)
 //                .convertToInteger("quality")
+                .categoricalToInteger("quality")
                 .build();
 
         List<List<Writable>> rawList = new ArrayList<>();
@@ -79,7 +80,7 @@ public class RedWineQualityCheck {
         //  Step 3 : Create Iterator ,splitting trainData and testData
 //========================================================================
         RecordReader cc = new CollectionRecordReader(processedData);
-        DataSetIterator dataIterator = new RecordReaderDataSetIterator(cc, rawList.size(), -1, 11);
+        DataSetIterator dataIterator = new RecordReaderDataSetIterator(cc, rawList.size(), -1, OUTPUT);
 
         DataSet allData = dataIterator.next();
         allData.shuffle(SEED);
