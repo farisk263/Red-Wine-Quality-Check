@@ -40,27 +40,27 @@ It is better if we can in some way, use machine learning to help predict the qua
 - **Evaluation**
 
     - Train Normal
-    
-    ![Train Normal](https://user-images.githubusercontent.com/76154147/106476655-3d5fb100-64e2-11eb-9f94-e56fd49057c4.png)
+
+    ![Train Normal](https://user-images.githubusercontent.com/63250608/164382689-5b847d93-586f-4ab0-9a1d-e97316847027.png)
     
     - Test Normal
     
-    ![Test Normal](https://user-images.githubusercontent.com/76154147/106477025-aa734680-64e2-11eb-9db8-1cf0338202ed.png)
+    ![Test Normal](https://user-images.githubusercontent.com/63250608/164382754-881c1f42-1d45-42ab-a657-d33ba200db4e.png)
 
 
     - Train K-Fold
     
-    ![Train K5](https://user-images.githubusercontent.com/76154147/106478080-d04d1b00-64e3-11eb-9fd3-a00490ef4008.png)
+    ![Train K5](https://user-images.githubusercontent.com/63250608/164382844-171bf913-476b-444e-b4d2-c4403f17ea00.png)
 
     
     - Test K-Fold
     
-    ![Test K5](https://user-images.githubusercontent.com/76154147/106478105-d93dec80-64e3-11eb-9b7a-c2ca0e1da0bf.png)
+    ![Test K5](https://user-images.githubusercontent.com/63250608/164382919-1d60cca8-eaec-4b78-b0e5-78d9ac21180e.png)
 
     
     - Average F1 Score 
     
-    ![Average F1 all fold](https://user-images.githubusercontent.com/76154147/106478132-dfcc6400-64e3-11eb-9851-075f3de28b0b.png)
+    ![Average F1 all fold](https://user-images.githubusercontent.com/63250608/164382977-a3b62b84-d086-490a-a47e-c5259480df28.png)
     
     
 ## **Conclusion**
